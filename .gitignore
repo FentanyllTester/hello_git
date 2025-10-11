@@ -1,0 +1,5 @@
+text
+
+*.log
+venv/
+.DS_Store

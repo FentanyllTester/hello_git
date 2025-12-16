@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои Python проекты | Защита проекта</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Arial, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #1a2980, #26d0ce);
+            color: #333;
+            min-height: 100vh;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
+            width: 100%;
+            overflow: hidden;
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .header {
+            background: linear-gradient(90deg, #2c3e50, #4a6491);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        .header h1 .icon {
+            font-size: 3rem;
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        .project-list {
+            padding: 40px 30px;
+        }
+        
+        .project-item {
+            background: #f8fafc;
+            border-left: 6px solid #3498db;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 25px;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .project-item:hover {
+            transform: translateX(10px);
+            box-shadow: 0 10px 25px rgba(52, 152, 219, 0.15);
+            background: #fff;
+        }
+        
+        .project-icon {
+            font-size: 2.8rem;
+            background: #e3f2fd;
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .project-content {
+            flex-grow: 1;
+        }
+        
+        .project-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .project-desc {
+            color: #5d6d7e;
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+        
+        .priority {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-top: 12px;
+            letter-spacing: 0.5px;
+        }
+        
+        .high { background: #ffeaa7; color: #d35400; }
+        .medium { background: #a29bfe; color: #2d3436; }
+        .low { background: #55efc4; color: #00b894; }
+        
+        .launch-section {
+            background: #f1f8ff;
+            padding: 30px;
+            text-align: center;
+            border-top: 3px dashed #3498db;
+            margin-top: 20px;
+        }
+        
+        .launch-btn {
+            background: linear-gradient(90deg, #2ecc71, #1abc9c);
+            color: white;
+            border: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 8px 20px rgba(46, 204, 113, 0.3);
+        }
+        
+        .launch-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(46, 204, 113, 0.4);
+        }
+        
+        .footer {
+            background: #2c3e50;
+            color: #ecf0f1;
+            padding: 25px;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .footer a {
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .footer a:hover {
+            text-decoration: underline;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.2rem;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .project-item {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .project-icon {
+                width: 60px;
+                height: 60px;
+                font-size: 2.2rem;
+            }
+            
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>
+                <span class="icon">🚀</span>
+                <span>Мои Python проекты</span>
+                <span class="icon">🐍</span>
+            </h1>
+            <p>Демонстрационный проект для защиты. Список реализованных и запланированных проектов на Python</p>
+        </div>
+        
+        <div class="project-list">
+            <!-- Проект 1 -->
+            <div class="project-item">
+                <div class="project-icon">💸</div>
+                <div class="project-content">
+                    <div class="project-title">Телеграм-бот для учета личных финансов</div>
+                    <div class="project-desc">
+                        Умный бот для отслеживания расходов и доходов с аналитикой по категориям, графиками и напоминаниями о платежах.
+                    </div>
+                    <span class="priority high">В РАЗРАБОТКЕ</span>
+                </div>
+            </div>
+            
+            <!-- Проект 2 -->
+            <div class="project-item">
+                <div class="project-icon">📊</div>
+                <div class="project-content">
+                    <div class="project-title">Веб-приложение для анализа настроений</div>
+                    <div class="project-desc">
+                        Анализ тональности текстов из социальных сетей с использованием библиотек TextBlob и NLTK.
+                    </div>
+                    <span class="priority medium">ПЛАНИРУЕТСЯ</span>
+                </div>
+            </div>
+            
+            <!-- Проект 3 -->
+            <div class="project-item">
+                <div class="project-icon">🎮</div>
+                <div class="project-content">
+                    <div class="project-title">Игра "Змейка" на библиотеке Pygame</div>
+                    <div class="project-desc">
+                        Классическая аркадная игра с современной графикой, системой рекордов и несколькими уровнями сложности.
+                    </div>
+                    <span class="priority low">РЕАЛИЗОВАНО</span>
+                </div>
+            </div>
+            
+            <!-- Проект 4 -->
+            <div class="project-item">
+                <div class="project-icon">🤖</div>
+                <div class="project-content">
+                    <div class="project-title">AI-ассистент для автоматизации задач</div>
+                    <div class="project-desc">
+                        Голосовой помощник для выполнения рутинных операций на компьютере с использованием OpenAI API.
+                    </div>
+                    <span class="priority medium">В ПЛАНАХ</span>
+                </div>
+            </div>
+            
+            <!-- Проект 5 -->
+            <div class="project-item">
+                <div class="project-icon">🌐</div>
+                <div class="project-content">
+                    <div class="project-title">Персональный сайт-портфолио на Flask</div>
+                    <div class="project-desc">
+                        Динамический веб-сайт с блогом, галереей проектов и системой обратной связи.
+                    </div>
+                    <span class="priority high">В РАЗРАБОТКЕ</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="launch-section">
+            <h2 style="margin-bottom: 20px; color: #2c3e50;">✅ Проект готов к демонстрации</h2>
+            <button class="launch-btn" onclick="launchDemo()">
+                <span>▶️</span>
+                Запустить демонстрацию Python-скрипта
+            </button>
+            <p style="margin-top: 20px; color: #5d6d7e; font-size: 1.1rem;">
+                Нажмите кнопку для имитации запуска Python-кода или откройте консоль разработчика (F12)
+            </p>
+        </div>
+        
+        <div class="footer">
+            <p>Проект создан для защиты работы по Git/GitHub | Репозиторий: 
+                <a href="https://github.com/ваш-username/hello_git" target="_blank">github.com/ваш-username/hello_git</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 0.9rem;">Для запуска на защите: откройте этот файл в браузере или выполните <code>python main.py</code> в терминале</p>
+        </div>
+    </div>
+    
+    <script>
+        function launchDemo() {
+            alert("🚀 Запуск Python-скрипта main.py...\n\n(В реальной демонстрации здесь бы запускался Python-код)\n\nДля настоящего запуска откройте терминал и выполните:\npython main.py");
+            
+            // Добавляем визуальный эффект в консоль браузера
+            console.log("=".repeat(60));
+            console.log("ЗАПУСК ПРОЕКТА: Мои Python проекты");
+            console.log("=".repeat(60));
+            console.log("1. 📁 Загрузка модулей... [OK]");
+            console.log("2. 🔧 Инициализация окружения... [OK]");
+            console.log("3. 🚀 Запуск основного скрипта... [OK]");
+            console.log("=".repeat(60));
+            console.log("ВЫВОД СКРИПТА:");
+            console.log("• Телеграм-бот для финансов - в разработке");
+            console.log("• Веб-анализатор настроений - планируется");
+            console.log("• Игра 'Змейка' на Pygame - реализовано");
+            console.log("• AI-ассистент - в планах");
+            console.log("• Сайт-портфолио на Flask - в разработке");
+            console.log("=".repeat(60));
+            console.log("✅ Демонстрация завершена успешно!");
+            
+            // Меняем текст кнопки
+            const btn = document.querySelector('.launch-btn');
+            btn.innerHTML = '<span>✅</span> Демонстрация запущена!';
+            btn.style.background = 'linear-gradient(90deg, #2ecc71, #27ae60)';
+            setTimeout(() => {
+                btn.innerHTML = '<span>▶️</span> Запустить демонстрацию Python-скрипта';
+                btn.style.background = 'linear-gradient(90deg, #2ecc71, #1abc9c)';
+            }, 3000);
+        }
+        
+        // Автоматически логируем при загрузке страницы
+        window.onload = function() {
+            console.log("Страница проекта 'Мои Python проекты' загружена");
+            console.log("Для полной демонстрации выполните в терминале:");
+            console.log("1. git clone https://github.com/ваш-username/hello_git.git");
+            console.log("2. cd hello_git");
+            console.log("3. python main.py");
+        };
+    </script>
+</body>
+</html>
